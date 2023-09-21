@@ -1,17 +1,16 @@
-// Define variables
+// Define variables and constants
 const startButton = document.getElementById("start-button");
 const quizSection = document.getElementById("quiz");
 const resultSection = document.getElementById("result");
 const landingPageSection = document.querySelector(".landing-page");
 const scoreDisplay = document.getElementById("score");
 const choices = document.querySelectorAll(".choice");
-const submitButton = document.getElementById("submit");
+const submitButton = document.getElementById("submit-button");
 
-let currentQuestion = 0;
-let score = 0;
-let timeLeft = 60;
+// Define constants for quiz settings
+const initialTime = 60; // Initial time for the quiz (adjust as needed)
 
-// Quiz questions and answers
+// Define quiz questions and answers
 const questions = [
   {
     question: "Testing",
@@ -35,18 +34,30 @@ const questions = [
   },
 ];
 
+// Define initial state variables
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = initialTime; // Initialize time with the initial time
+let timerInterval; // Variable to hold the interval ID
+
+// Event Listener for Start Quiz button
+startButton.addEventListener("click", startQuiz);
+
 // Function to start the quiz
 function startQuiz() {
   startButton.style.display = "none";
   landingPageSection.style.display = "none"; // Hide the landing page
   quizSection.style.display = "block"; // Show the quiz
   showQuestion();
+  startTimer(); // Start the timer
+}
 
-  // Start the timer
+// Function to start the timer
+function startTimer() {
   const timerElement = document.getElementById("timer");
-  const timer = setInterval(function () {
+  timerInterval = setInterval(function () {
     if (timeLeft <= 0 || currentQuestion >= questions.length) {
-      clearInterval(timer); // Stop the timer if the quiz is finished
+      clearInterval(timerInterval); // Stop the timer if the quiz is finished
       endQuiz();
     } else {
       timeLeft--;
@@ -83,11 +94,18 @@ function checkAnswer(event) {
     selectedChoice.textContent === questionData.answers[questionData.correct]
   ) {
     score++;
+    updateScoreDisplay(); // Update the score display
   } else {
     timeLeft -= 10; // Deduct time for incorrect answers
   }
   currentQuestion++;
   showQuestion();
+}
+
+// Function to update the score display
+function updateScoreDisplay() {
+  const scoreDisplay = document.getElementById("score-display");
+  scoreDisplay.textContent = `Score: ${score}`;
 }
 
 // Function to end the quiz
@@ -99,9 +117,14 @@ function endQuiz() {
 
 // Function to submit the score
 function submitScore() {
-  const playerName = prompt("Enter your name:"); // Prompt user for their name
+  // Get the player's initials from the input field
+  const initialsInput = document.getElementById("initials");
+  const playerName = initialsInput.value.trim();
+
   if (!playerName) {
-    return; // Do not save the score if no name is provided
+    // Check if initials are provided
+    alert("Please enter your initials.");
+    return;
   }
 
   const playerScore = {
@@ -116,14 +139,19 @@ function submitScore() {
   // Store the updated scores back in local storage
   localStorage.setItem("scores", JSON.stringify(scores));
 
+  // Clear the input field
+  initialsInput.value = "";
+
   alert("Score submitted successfully!");
 }
 
+// Event Listener for Submit Score button
+submitButton.addEventListener("click", submitScore);
+
 // Function to retrieve scores from local storage
 function getScores() {
-  // Retrieve scores from local storage (assuming scores are stored as an array of objects)
+  // Retrieve scores from local storage, sort, and return them
   const scores = JSON.parse(localStorage.getItem("scores")) || [];
-  // Sort scores in descending order (highest score first)
   scores.sort((a, b) => b.score - a.score);
   return scores;
 }
@@ -148,7 +176,7 @@ function displayScores() {
   });
 }
 
-// Function for the "View Leaderboard" button click
+// Event Listener for View Leaderboard button
 document
   .getElementById("leaderboard-button")
   .addEventListener("click", function () {
@@ -161,7 +189,6 @@ document
     displayScores();
   });
 
-// Event listeners
-startButton.addEventListener("click", startQuiz);
-submitButton.addEventListener("click", submitScore);
+// Initial actions on window load
 window.addEventListener("load", displayScores);
+window.addEventListener("load", updateScoreDisplay);

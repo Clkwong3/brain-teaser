@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Quiz</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Code Quiz</title>
   </head>
 
   <body>
-    <nav class="navbar">
-      <button id="leaderboard-button">View Leaderboard</button>
-      <span id="timer">Time Left: 60s</span>
-    </nav>
-
+    <!-- Everything inside the website -->
     <div class="wrapper">
+      <!-- Navigation and Timer -->
+      <nav class="navbar">
+        <button id="leaderboard-button">View Leaderboard</button>
+        <span id="timer">Time Left: 60s</span>
+        <span id="score-display">Score: 0</span>
+      </nav>
       <main>
-        <!-- Add the landing page section below -->
+        <!-- Landing Page Section -->
         <section class="landing-page">
           <h1>Coding Quiz Challenge</h1>
           <p>
@@ -26,24 +28,38 @@
           <h2><button id="start-button">Start Quiz</button></h2>
         </section>
 
-        <!-- Add the quiz section below -->
+        <!-- Quiz Section -->
         <section id="quiz">
+          <!-- Question and Choices will be dynamically updated here -->
           <h2>Question 1</h2>
           <p>Testing</p>
           <ul>
+            <!-- Choices will be dynamically populated here -->
             <li><button class="choice">1</button></li>
             <li><button class="choice">2</button></li>
             <li><button class="choice">3</button></li>
             <li><button class="choice">4</button></li>
           </ul>
         </section>
+
+        <!-- Result Section -->
         <section id="result">
           <h2>Result</h2>
-          <p>Your score: <span id="score">0</span></p>
-          <button id="submit">Submit Score</button>
+          <p class="score-paragraph">Your score: <span id="score">0</span></p>
+          <!-- Add an input field for player initials -->
+          <div class="initials-section">
+            <label for="initials">Enter your initials:</label>
+            <input
+              type="text"
+              id="initials"
+              maxlength="3"
+              placeholder="Your Initials"
+            />
+          </div>
+          <button id="submit-button">Submit Score</button>
         </section>
 
-        <!-- Add the leaderboard section below -->
+        <!-- Leaderboard Section -->
         <section id="leaderboard" style="display: none">
           <h2>Leaderboard</h2>
           <table>
