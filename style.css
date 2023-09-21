@@ -5,46 +5,47 @@
   box-sizing: border-box;
 }
 
-/* Global styles */
+/* Set a background color for the entire page */
 body {
-  font-family: Verdana, Tahoma, sans-serif;
-  background: linear-gradient(to bottom, #ccecf2, #0a04b4);
-  margin: 0;
-  padding: 0;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
-/* Header styles */
+/* Style the wrapper div */
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the header section */
 header {
   text-align: center;
-  background-color: #0a04b4;
-  color: #fff;
-  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+h1 {
   font-size: 24px;
+  color: #333;
 }
 
-/* Main content styles */
+/* Style the main content section */
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  text-align: center;
 }
 
-/* Quiz section styles */
+/* Style the quiz section */
 #quiz {
   display: none;
-  background: #fff;
-  width: 90%;
-  max-width: 600px;
-  margin-top: 20px;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
 }
 
 #quiz h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 #quiz p {
@@ -52,55 +53,59 @@ main {
   margin-bottom: 20px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .choice {
   display: block;
-  padding: 10px;
-  font-size: 16px;
-  margin: 5px;
   width: 100%;
-  background-color: #0a04b4;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .choice:hover {
-  background-color: #001a8a;
+  background-color: #0056b3;
 }
 
-/* Result section styles */
+/* Style the result section */
 #result {
   display: none;
+}
+
+#result h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#score {
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Style the footer section */
+footer {
   text-align: center;
   margin-top: 20px;
 }
 
-#score {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Footer styles */
-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-#start,
-#submit {
+button {
   padding: 10px 20px;
-  font-size: 18px;
-  background-color: #0a04b4;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 10px;
+  transition: background-color 0.2s;
 }
 
-#start:hover,
-#submit:hover {
-  background-color: #001a8a;
+button:hover {
+  background-color: #0056b3;
 }
