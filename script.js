@@ -26,12 +26,17 @@ function startQuiz() {
   landingPageSection.style.display = "none"; // Hide the landing page
   quizSection.style.display = "block"; // Show the quiz
   showQuestion();
+
   // Start the timer
+  const timerElement = document.getElementById("timer");
   const timer = setInterval(function () {
-    timeLeft--;
-    if (timeLeft <= 0) {
-      clearInterval(timer);
+    if (timeLeft <= 0 || currentQuestion >= questions.length) {
+      clearInterval(timer); // Stop the timer if the quiz is finished
       endQuiz();
+    } else {
+      timeLeft--;
+      // Update the timer text
+      timerElement.textContent = `Time Left: ${timeLeft}s`;
     }
   }, 1000);
 }

@@ -21,6 +21,19 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Style the navigation bar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Style the timer text */
+#timer {
+  font-size: 18px;
+}
+
 /* Style the header section */
 header {
   text-align: center;
