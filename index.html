@@ -6,19 +6,27 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <nav class="navbar">
+      <button id="leaderboard-button">View Leaderboard</button>
       <span id="timer">Time Left: 60s</span>
     </nav>
 
     <div class="wrapper">
-      <header>
-        <h1>Coding Quiz Challenge</h1>
-      </header>
       <main>
-        <section id="landing-page">
-          <button id="start">Start Quiz</button>
+        <!-- Add the landing page section below -->
+        <section class="landing-page">
+          <h1>Coding Quiz Challenge</h1>
+          <p>
+            Answer the following questions within the time limit.
+            <br />
+            Incorrect answers will take 10 seconds off your time.
+          </p>
+          <h2><button id="start-button">Start Quiz</button></h2>
         </section>
+
+        <!-- Add the quiz section below -->
         <section id="quiz">
           <h2>Question 1</h2>
           <p>Testing</p>
@@ -33,6 +41,23 @@
           <h2>Result</h2>
           <p>Your score: <span id="score">0</span></p>
           <button id="submit">Submit Score</button>
+        </section>
+
+        <!-- Add the leaderboard section below -->
+        <section id="leaderboard" style="display: none">
+          <h2>Leaderboard</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Leaderboard data will be displayed here -->
+            </tbody>
+          </table>
         </section>
       </main>
     </div>
