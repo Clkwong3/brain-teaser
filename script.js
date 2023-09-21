@@ -182,12 +182,31 @@ document
   .addEventListener("click", function () {
     // Toggle the visibility of the leaderboard section
     const leaderboardSection = document.getElementById("leaderboard");
-    leaderboardSection.style.display =
-      leaderboardSection.style.display === "none" ? "block" : "none";
+    leaderboardSection.style.display = "block"; // Show the leaderboard section
+
+    // Hide other sections (quiz and result)
+    quizSection.style.display = "none";
+    resultSection.style.display = "none";
+    landingPageSection.style.display = "none";
 
     // Call the function to display leaderboard data (you may need to modify this function)
     displayScores();
   });
+
+// Event Listener for Clear Leaderboard button
+document
+  .getElementById("clear-button")
+  .addEventListener("click", clearLeaderboard);
+
+// Function to clear the leaderboard and local storage
+function clearLeaderboard() {
+  // Clear the leaderboard displayed on the webpage
+  const leaderboardTable = document.querySelector("tbody");
+  leaderboardTable.innerHTML = ""; // This removes all rows from the leaderboard table
+
+  // Clear the leaderboard data in local storage
+  localStorage.removeItem("scores");
+}
 
 // Initial actions on window load
 window.addEventListener("load", displayScores);
