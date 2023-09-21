@@ -2,6 +2,7 @@
 const startButton = document.getElementById("start");
 const quizSection = document.getElementById("quiz");
 const resultSection = document.getElementById("result");
+const landingPageSection = document.getElementById("landing-page");
 const scoreDisplay = document.getElementById("score");
 const choices = document.querySelectorAll(".choice");
 const submitButton = document.getElementById("submit");
@@ -14,12 +15,7 @@ let timeLeft = 60;
 const questions = [
   {
     question: "Testing",
-    answers: [
-      "1",
-      "2",
-      "3",
-      "4",
-    ],
+    answers: ["1", "2", "3", "4"],
     correct: 0, // Index of the correct answer
   },
 ];
@@ -27,6 +23,8 @@ const questions = [
 // Function to start the quiz
 function startQuiz() {
   startButton.style.display = "none";
+  landingPageSection.style.display = "none"; // Hide the landing page
+  quizSection.style.display = "block"; // Show the quiz
   showQuestion();
   // Start the timer
   const timer = setInterval(function () {
@@ -77,6 +75,12 @@ function endQuiz() {
   quizSection.style.display = "none";
   resultSection.style.display = "block";
   scoreDisplay.textContent = score;
+}
+
+// Placeholder function for submitting scores
+function submitScore() {
+  // Implement your code for submitting scores here
+  alert("Score submitted!"); // This is just a placeholder
 }
 
 // Event listeners
