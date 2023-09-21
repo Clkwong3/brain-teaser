@@ -145,6 +145,20 @@ function submitScore() {
   alert("Score submitted successfully!");
 }
 
+// Function to return to the landing page
+function returnHome() {
+  // Reset quiz-related variables
+  currentQuestion = 0;
+  score = 0;
+  timeLeft = initialTime; // Reset the timer
+
+  // Reload the page to return to the landing page
+  location.reload();
+}
+
+// Event Listener for exit button
+document.getElementById("exit-button").addEventListener("click", returnHome);
+
 // Event Listener for Submit Score button
 submitButton.addEventListener("click", submitScore);
 
