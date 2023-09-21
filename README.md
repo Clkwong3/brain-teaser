@@ -46,7 +46,8 @@ Follow these instructions to set up and run the brain teaser quiz game:
 
 - **LocalStorage:** Player scores and initials are stored locally, enabling them to track their progress and compete against themselves and others over time.
 
-  ![Full Page Image](/assets/images/landing-page.jpeg) ![Full Page Image](/assets/images/leaderboard.jpeg)
+  ![Full Page Image](/assets/images/landing-page.jpeg) 
+  ![Full Page Image](/assets/images/view-leaderboard.jpeg)
 
 ## Usage
 
