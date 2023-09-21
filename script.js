@@ -222,6 +222,21 @@ function clearLeaderboard() {
   localStorage.removeItem("scores");
 }
 
+// Event Listener for Exit Leaderboard button
+document
+  .getElementById("exit-leaderboard-button")
+  .addEventListener("click", exitLeaderboard);
+
+// Function to exit the leaderboard and return to the landing page
+function exitLeaderboard() {
+  // Hide the leaderboard section
+  const leaderboardSection = document.getElementById("leaderboard");
+  leaderboardSection.style.display = "none";
+
+  // Show the landing page
+  landingPageSection.style.display = "block";
+}
+
 // Initial actions on window load
 window.addEventListener("load", displayScores);
 window.addEventListener("load", updateScoreDisplay);

@@ -98,7 +98,8 @@ main {
 #start-button:hover,
 .choice:hover,
 #submit-button:hover,
-#clear-button:hover {
+#clear-button:hover,
+#exit-leaderboard-button:hover {
   background-color: #0056b3;
 }
 
@@ -238,7 +239,8 @@ table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#clear-button {
+#clear-button,
+#exit-leaderboard-button {
   background-color: #007bff;
   font-size: medium;
   color: #fff;
