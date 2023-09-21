@@ -13,24 +13,58 @@ const initialTime = 60; // Initial time for the quiz (adjust as needed)
 // Define quiz questions and answers
 const questions = [
   {
-    question: "Testing",
-    answers: ["1", "2", "3", "4"],
+    question:
+      "In the CSS box model, which property represents the space between the content and the border of an element?",
+    answers: ["padding", "margin", "border-spacing", "border-width"],
     correct: 0, // Index of the correct answer
   },
   {
-    question: "Testing",
-    answers: ["1", "2", "3", "4"],
+    question:
+      "Which HTML element is used to define a container for navigation links?",
+    answers: ["<header>", "<div>", "<section>", "<nav>"],
     correct: 3, // Index of the correct answer
   },
   {
-    question: "Testing",
-    answers: ["1", "2", "3", "4"],
+    question:
+      "Given an array: [1, 2, 3, 4, 5], how can you remove the element '3' to obtain [1, 2, 4, 5] using JavaScript?",
+    answers: [
+      "arr.pop(3);",
+      "arr.remove(3);",
+      "arr.splice(2, 1);",
+      "arr.filter(item => item !== 3);",
+    ],
     correct: 2, // Index of the correct answer
   },
   {
-    question: "Testing",
-    answers: ["1", "2", "3", "4"],
+    question: "What is client-side form validation in HTML and JavaScript?",
+    answers: [
+      "Compiled Language",
+      "Interpreted Language",
+      "Procedural Language",
+      "Functional Language",
+    ],
     correct: 1, // Index of the correct answer
+  },
+  {
+    question:
+      "What's the purpose of HTML5 semantic elements like <header>, <nav>, and <section>?",
+    answers: [
+      "They improve page performance.",
+      "They're used for server-side scripting.",
+      "They make web pages look better.",
+      "They provide structure and meaning to HTML documents.",
+    ],
+    correct: 3, // Index of the correct answer
+  },
+  {
+    question: "What is a callback function in JavaScript?",
+    answers: [
+      "A function used to handle errors.",
+      "A function that always gives a result.",
+      "A function executed immediately when declared.",
+      "A function passed as an argument to another function.",
+    ],
+    correct: 0, // Index of the correct answer
   },
 ];
 
